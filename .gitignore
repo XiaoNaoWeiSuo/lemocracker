@@ -1,0 +1,32 @@
+# 数据库文件 - 运行时生成，不需要版本控制
+*.db
+lemobar_scan.db
+lemobar_map_scan.db
+
+# 导出文件 - 用户生成的数据
+*.csv
+lemobar_export.csv
+lemobar_export.xlsx
+
+# 可执行文件 - 编译生成
+lemobar-crawler
+lemobar-crawler.exe
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# macOS 系统文件
+.DS_Store
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Go 相关
+vendor/

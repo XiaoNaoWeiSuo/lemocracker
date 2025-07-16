@@ -1,0 +1,27 @@
+# 柠檬吧爬虫配置示例
+# 复制这个文件为 config.txt，修改相应的值
+
+# 必需参数 - Authorization 头值
+# 从柠檬吧小程序的网络请求中获取
+AUTH_TOKEN="36e443b22b61942fd817beb4c05d1a0dd"
+
+# 可选参数
+REQUEST_INTERVAL="200ms"    # 请求间隔 (200ms, 500ms, 1s等)
+TOTAL_DURATION="30m"       # 总采集时长 (30m, 1h, 2h等)
+MAX_BLOCKS_PER_CITY="5000" # 每个城市最大采集块数
+OUTPUT_DATABASE="lemobar_scan.db"     # 数据库文件路径
+OUTPUT_CSV="lemobar_export.csv"       # CSV导出文件路径
+
+# 使用方法:
+# 1. 修改上面的配置值
+# 2. 运行命令:
+#    ./lemobar-crawler -auth "你的AUTH_TOKEN" -interval 200ms -duration 30m
+
+# 快速开始命令示例:
+# ./lemobar-crawler -auth "36e443b22b61942fd817beb4c05d1a0dd"
+
+# 高性能采集 (更短间隔，更长时间):
+# ./lemobar-crawler -auth "36e443b22b61942fd817beb4c05d1a0dd" -interval 100ms -duration 2h
+
+# 温和采集 (较长间隔，避免被限制):
+# ./lemobar-crawler -auth "36e443b22b61942fd817beb4c05d1a0dd" -interval 1s -duration 1h
