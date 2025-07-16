@@ -294,33 +294,27 @@ func loadConfig() (*Config, error) {
 
 // 显示主菜单
 func showMainMenu() {
-	fmt.Println("\n" + strings.Repeat("=", 50))
-	fmt.Println("           柠檬吧数据爬虫工具 v2.0")
-	fmt.Println(strings.Repeat("=", 50))
-	fmt.Println("1. 开始数据采集")
-	fmt.Println("2. 导出数据到CSV")
-	fmt.Println("3. 查看当前配置")
-	fmt.Println("4. 修改配置")
-	fmt.Println("5. 查看数据库统计")
-	fmt.Println("6. 帮助说明")
+	fmt.Println("\n" + strings.Repeat("=", 60))
+	fmt.Println("               LMB数据爬虫工具 v2.0")
+	fmt.Println(strings.Repeat("=", 60))
+	fmt.Println("1. 开始数据采集          2. 导出数据到CSV")
+	fmt.Println("3. 查看当前配置          4. 修改配置")
+	fmt.Println("5. 查看数据库统计        6. 帮助说明")
 	fmt.Println("0. 退出程序")
-	fmt.Println(strings.Repeat("=", 50))
+	fmt.Println(strings.Repeat("=", 60))
 	fmt.Print("请选择操作 (0-6): ")
 }
 
 // 显示配置菜单
 func showConfigMenu() {
-	fmt.Println("\n" + strings.Repeat("-", 40))
-	fmt.Println("           配置设置")
-	fmt.Println(strings.Repeat("-", 40))
-	fmt.Println("1. 设置 Authorization 头值")
-	fmt.Println("2. 设置请求间隔时间")
-	fmt.Println("3. 设置采集时长")
-	fmt.Println("4. 设置每城市最大采集数")
-	fmt.Println("5. 设置数据库文件路径")
-	fmt.Println("6. 设置导出文件路径")
+	fmt.Println("\n" + strings.Repeat("-", 50))
+	fmt.Println("                   配置设置")
+	fmt.Println(strings.Repeat("-", 50))
+	fmt.Println("1. 设置 Authorization 头值    2. 设置请求间隔时间")
+	fmt.Println("3. 设置采集时长              4. 设置每城市最大采集数")
+	fmt.Println("5. 设置数据库文件路径        6. 设置导出文件路径")
 	fmt.Println("0. 返回主菜单")
-	fmt.Println(strings.Repeat("-", 40))
+	fmt.Println(strings.Repeat("-", 50))
 	fmt.Print("请选择要修改的配置 (0-6): ")
 }
 
@@ -458,9 +452,6 @@ func modifyConfig() {
 		default:
 			fmt.Println("❌ 无效选择，请输入 0-6")
 		}
-
-		fmt.Print("\n按回车键继续...")
-		readInput()
 	}
 }
 
@@ -535,7 +526,7 @@ func showHelp() {
 	fmt.Println("4. 采集完成后可导出为 CSV 格式")
 	fmt.Println()
 	fmt.Println("🔧 参数说明:")
-	fmt.Println("• Authorization: 从柠檬吧小程序获取的认证令牌")
+	fmt.Println("• Authorization: 从lemo吧小程序获取的认证令牌")
 	fmt.Println("• 请求间隔: 两次API请求之间的等待时间")
 	fmt.Println("• 采集时长: 每个城市的最大采集时间")
 	fmt.Println("• 最大采集数: 每个城市最多采集的位置点数量")
@@ -631,7 +622,7 @@ func startDataCollection() {
 }
 
 func main() {
-	fmt.Println("欢迎使用柠檬吧数据爬虫工具!")
+	fmt.Println("欢迎使用LMB数据爬虫工具!")
 
 	// 加载配置
 	var err error
@@ -671,18 +662,12 @@ func main() {
 			showHelp()
 
 		case "0":
-			fmt.Println("\n👋 感谢使用柠檬吧数据爬虫工具!")
+			fmt.Println("\n👋 感谢使用LMB数据爬虫工具!")
 			fmt.Println("再见!")
 			os.Exit(0)
 
 		default:
 			fmt.Println("❌ 无效选择，请输入 0-6")
-		}
-
-		// 等待用户按回车继续
-		if choice != "4" { // 配置菜单有自己的等待逻辑
-			fmt.Print("\n按回车键继续...")
-			readInput()
 		}
 	}
 }
